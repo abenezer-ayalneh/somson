@@ -1,0 +1,45 @@
+{
+	"name": "next-template",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack",
+		"build": "next build --turbopack",
+		"start": "next start",
+		"lint": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+		"format": "prettier --write .",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"@eslint/js": "^9.39.1",
+		"next": "15.5.6",
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^20.1.0",
+		"@commitlint/config-conventional": "^20.0.0",
+		"@next/eslint-plugin-next": "^16.0.0",
+		"@tailwindcss/postcss": "^4",
+		"@types/eslint-plugin-jsx-a11y": "^6.10.1",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"@typescript-eslint/eslint-plugin": "^8.46.2",
+		"@typescript-eslint/parser": "^8.46.2",
+		"eslint": "^9.38.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-import-resolver-typescript": "^4.4.4",
+		"eslint-plugin-import": "^2.32.0",
+		"eslint-plugin-jsx-a11y": "^6.10.2",
+		"eslint-plugin-prettier": "^5.5.4",
+		"eslint-plugin-react": "^7.37.5",
+		"eslint-plugin-react-hooks": "^7.0.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.5",
+		"prettier": "^3.6.2",
+		"pretty-quick": "^4.2.2",
+		"tailwindcss": "^4",
+		"typescript": "^5"
+	}
+}
