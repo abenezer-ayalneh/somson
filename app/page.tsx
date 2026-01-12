@@ -1,3 +1,9 @@
+import Link from 'next/dist/client/link'
+
 export default function Home() {
-	return <div></div>
+	return (
+		<div>
+			<Link href="/routines">Routines</Link>
+		</div>
+	)
 }

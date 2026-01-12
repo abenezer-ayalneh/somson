@@ -123,4 +123,17 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+
+	button:not(:disabled),
+	[role='button']:not(:disabled) {
+		cursor: pointer;
+	}
+
+	/* Auto-add asterisk to labels with required inputs */
+	label:has(+ input[required])::after,
+	label:has(+ textarea[required])::after,
+	label:has(+ select[required])::after {
+		content: '*';
+		color: var(--destructive);
+	}
 }
