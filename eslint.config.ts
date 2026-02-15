@@ -11,7 +11,7 @@ import globals from 'globals'
 
 export default [
 	{
-		ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'dist/**', 'coverage/**', '.turbo/**', 'next-env.d.ts'],
+		ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'dist/**', 'coverage/**', '.turbo/**', 'next-env.d.ts', '**/mockServiceWorker.js'],
 	},
 	eslint.configs.recommended,
 	{
@@ -24,6 +24,7 @@ export default [
 				ecmaFeatures: {
 					jsx: true,
 				},
+				project: './tsconfig.json',
 			},
 			globals: {
 				...globals.browser,
@@ -85,6 +86,18 @@ export default [
 				node: {
 					extensions: ['.js', '.jsx', '.ts', '.tsx'],
 				},
+			},
+		},
+	},
+	{
+		files: ['**/*.test.{ts,tsx}', '**/*.spec.{ts,tsx}', '**/vitest.setup.tsx'],
+		languageOptions: {
+			globals: {
+				...globals.browser,
+				...globals.node,
+				...globals.vitest,
+				React: 'readonly',
+				PageProps: 'readonly',
 			},
 		},
 	},

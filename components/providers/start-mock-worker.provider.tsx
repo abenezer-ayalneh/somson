@@ -3,16 +3,20 @@
 import { useEffect, useState } from 'react'
 
 import { Spinner } from '@/components/ui/spinner'
+import { ENABLE_MSW, IS_DEVELOPMENT } from '@/lib/constants/env'
 
 export default function StartMockWorkerProvider({ children }: { children: React.ReactNode }) {
 	const [isMockReady, setMockReady] = useState(false)
 
 	useEffect(() => {
 		async function enableMocks() {
-			if (process.env.NEXT_PUBLIC_NODE_ENV === 'development') {
-				const { worker } = await import('@/mocks/browser')
-				await worker.start()
+			if (!ENABLE_MSW || !IS_DEVELOPMENT) {
+				setMockReady(true)
+				return
 			}
+
+			const { worker } = await import('@/mocks/browser')
+			await worker.start()
 			setMockReady(true)
 		}
 

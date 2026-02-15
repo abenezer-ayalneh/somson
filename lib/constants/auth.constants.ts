@@ -1,0 +1,5 @@
+export const AUTH_DEFAULT_CALLBACK_URL = '/'
+export const AUTH_SIGN_IN_PATH = '/auth'
+export const AUTH_SIGN_UP_PATH = '/auth/sign-up'
+export const AUTH_API_ROUTE_PREFIX = '/api/auth'
+export const GOOGLE_PROVIDER_ID = 'google'
